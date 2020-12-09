@@ -6,13 +6,17 @@ string abcde should equal 8
 */
 function countVowelConsonant(str) {
     // write code here
-    split = (str.match(/[aeiou]/gi)).trim();
+    str = str.replace(/\s/g,'');
+    console.log(str);
+    split = str.match(/[aeiou]/gi).length;
+    
     console.log(split);
     // const vowel_count = split.match(/[aeiou]/gi).length;
     // // vowels = 1
     // vowel_total = vowel_count;
-    // const consonant_count = str.length - vowel_count;
-    // console.log(consonant_count);
+    const consonant_count = (str.length - split) * 2;
+
+    console.log(consonant_count + split)
   }
 
-  countVowelConsonant("This is a string");
+  countVowelConsonant("abcde");
